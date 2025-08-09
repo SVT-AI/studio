@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culinary Arts 🍽 — Przepisy & Inspiracje</title>
+
+  <!-- SEO / Social -->
+  <meta name="description" content="Pyszne, szybkie przepisy — przekąski, dania główne, zupy i desery. Szukaj, filtruj i udostępniaj ulubione dania.">
+  <meta property="og:title" content="Culinary Arts — Przepisy & Inspiracje">
+  <meta property="og:description" content="12 przepisów + wyszukiwarka, filtry, ulubione i strona szczegółu.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#image-gallery">Przejdź do galerii</a>
+
+  <header>
+    <button id="back-btn" class="btn back-btn" aria-label="Cofnij do poprzedniego ekranu" hidden aria-hidden="true">← Cofnij</button>
+    <button id="theme-toggle" class="btn ghost theme-toggle" aria-label="Przełącz tryb kolorów">🌙</button>
+
+    <div class="header-inner">
+      <img src="logo.png" alt="Logo Culinary Arts" class="logo" />
+      <div class="title-wrap">
+        <h1>Przepisy &amp; Inspiracje Kulinarne</h1>
+        <p class="subtitle">Przekąski • Dania główne • Zupy • Desery</p>
+      </div>
+    </div>
+
+    <!-- Dekoracyjna fala -->
+    <svg class="header-wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,80 C240,140 480,20 720,60 C960,100 1200,160 1440,120 L1440,180 L0,180 Z" fill="url(#grad)"></path>
+      <defs>
+        <linearGradient id="grad" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0%" stop-color="#ff7e5f"/>
+          <stop offset="100%" stop-color="#feb47b"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Wyszukiwanie i filtrowanie">
+      <div class="controls-inner">
+        <input type="text" id="search-input" placeholder="Szukaj po nazwie, tagu lub składniku…" aria-label="Szukaj" />
+        <select id="category-select" aria-label="Kategoria">
+          <option value="all">Wszystkie kategorie</option>
+          <option value="Przekąski">Przekąski</option>
+          <option value="Dania główne">Dania główne</option>
+          <option value="Zupy">Zupy</option>
+          <option value="Desery">Desery</option>
+        </select>
+
+        <label class="fav-toggle">
+          <input type="checkbox" id="fav-only" />
+          <span>♥ Tylko ulubione</span>
+        </label>
+
+        <span id="results-count" class="results-count" aria-live="polite">Wyniki: 0</span>
+      </div>
+    </section>
+
+    <section class="gallery" id="image-gallery" aria-live="polite"></section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Podgląd przepisu">
+    <button class="close" aria-label="Zamknij powiększenie">&times;</button>
+    <img class="lightbox-image" src="" alt="" />
+    <div class="lightbox-caption"></div>
+
+    <div class="share-bar">
+      <button class="btn share" id="share-native" aria-label="Udostępnij">Udostępnij</button>
+      <a class="btn ghost" id="share-fb" target="_blank" rel="noopener" aria-label="Udostępnij na Facebooku">Facebook</a>
+      <a class="btn ghost" id="share-x" target="_blank" rel="noopener" aria-label="Udostępnij na X (Twitter)">X</a>
+      <button class="btn ghost" id="share-copy" aria-label="Skopiuj link">Kopiuj link</button>
+    </div>
+  </div>
+
+  <!-- Szczegóły przepisu -->
+  <section id="detail-panel" class="detail hidden" role="dialog" aria-modal="true" aria-labelledby="detail-title">
+    <div class="detail-inner">
+      <button class="btn ghost detail-close" id="detail-close" aria-label="Zamknij szczegóły">✕</button>
+      <button class="btn ghost detail-print" id="detail-print" aria-label="Drukuj przepis">🖨 Drukuj</button>
+
+      <h2 id="detail-title"></h2>
+      <div class="detail-meta" id="detail-meta"></div>
+      <img id="detail-image" alt="" />
+
+      <div class="detail-grid">
+        <section>
+          <h3>Składniki</h3>
+          <ul id="detail-ingredients"></ul>
+        </section>
+        <section>
+          <h3>Kroki</h3>
+          <ol id="detail-steps"></ol>
+        </section>
+      </div>
+
+      <aside class="detail-tips">
+        <h3>Porady</h3>
+        <p id="detail-tips"></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact-inner">
+      <h2 id="contact-title">Kontakt</h2>
+      <p class="contact-sub">Masz pytania lub propozycje przepisów? Napisz do nas!</p>
+      <form id="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name">Imię *</label>
+          <input id="cf-name" name="name" type="text" placeholder="Twoje imię" required />
+          <small class="err" id="err-name"></small>
+        </div>
+        <div class="field">
+          <label for="cf-email">E-mail *</label>
+          <input id="cf-email" name="email" type="email" placeholder="np. ala@kuchnia.pl" required />
+          <small class="err" id="err-email"></small>
+        </div>
+        <div class="field">
+          <label for="cf-topic">Temat</label>
+          <input id="cf-topic" name="topic" type="text" placeholder="Czego dotyczy wiadomość?" />
+        </div>
+        <div class="field">
+          <label for="cf-message">Wiadomość *</label>
+          <textarea id="cf-message" name="message" rows="5" placeholder="Napisz wiadomość..." required></textarea>
+          <small class="err" id="err-message"></small>
+        </div>
+        <label class="consent">
+          <input type="checkbox" id="cf-consent" required />
+          <span>Wyrażam zgodę na kontakt zwrotny na podany adres e-mail.</span>
+        </label>
+        <div class="actions">
+          <button type="submit" class="btn">Wyślij</button>
+          <span id="cf-status" class="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <button id="to-top" class="to-top" aria-label="Przewiń do góry">↑</button>
+
+  <footer>
+    <p>© 2025 Culinary Arts. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
