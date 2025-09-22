@@ -1,139 +1,151 @@
-<!doctype html>
-<html lang="pl" data-theme="light">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Culinary Studio – przepisy, przekąski, dania, desery</title>
-  <meta name="description" content="Proste przepisy: przekąski, dania i desery. Wyszukiwarka, tagi, ulubione, lightbox, kalkulator kalorii i generator przepisów." />
-  <link rel="canonical" href="https://culinary-studio.netlify.app/">
-  <meta name="theme-color" content="#ef4444">
-  <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <meta property="og:title" content="Culinary Studio" />
-  <meta property="og:description" content="Proste przepisy krok po kroku." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/hero.jpg" />
-  <link rel="stylesheet" href="./style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Księga Biofotoniczna – Rozdziały 1-3</title>
+<style>
+  body { font-family: 'Georgia', serif; line-height: 1.7; margin: 20px; background-color: #f9f9f9; color: #111; }
+  h1, h2, h3 { color: #2c3e50; }
+  nav { margin-bottom: 20px; padding: 10px; background: #ecf0f1; border-radius: 10px; }
+  nav a { margin-right: 15px; text-decoration: none; color: #2980b9; }
+  .chapter { margin-bottom: 50px; }
+  .dialog { margin: 15px 0; padding-left: 20px; border-left: 3px solid #3498db; font-style: italic; }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Culinary Studio – strona główna">
-        <span class="logo" aria-hidden="true">🍰</span>
-        <span class="brand-name">Culinary Studio</span>
-      </a>
-      <nav class="nav-links" aria-label="Główna nawigacja">
-        <a href="#przekaski">Przekąski</a>
-        <a href="#dania">Dania</a>
-        <a href="#desery">Desery</a>
-        <a href="#kalorie">Kalkulator</a>
-        <button id="themeToggle" class="toggle" aria-label="Przełącz tryb jasny/ciemny">🌓</button>
-        <button id="printBtn" class="toggle" aria-label="Drukuj stronę">🖨️</button>
-      </nav>
-    </div>
-  </header>
 
-  <main id="home" class="container">
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div>
-        <h1 id="hero-title">Proste i pyszne przepisy, które zawsze wychodzą</h1>
-        <p>Filtruj po tagach, szukaj po nazwie i zapisuj ulubione. Czysty HTML/CSS/JS – idealne pod Netlify.</p>
-        <div class="searchbar" role="search">
-          <input id="search" type="search" placeholder="Szukaj przepisu… (np. tiramisu, makaron)" aria-label="Szukaj przepisu" />
-        </div>
-        <div id="tagBar" class="tags" aria-label="Filtruj po tagach">
-          <button class="tag" data-tag="przekaski">przekąski</button>
-          <button class="tag" data-tag="dania">dania</button>
-          <button class="tag" data-tag="desery">desery</button>
-          <button class="tag" data-tag="wegetarianskie">wegetariańskie</button>
-          <button class="tag" data-tag="bezglutenowe">bezglutenowe</button>
-          <button class="tag" data-tag="szybkie">szybkie</button>
-        </div>
-      </div>
-      <img src="/images/hero.jpg" alt="Stół z różnymi potrawami" loading="lazy" />
-    </section>
+<nav>
+  <a href="#rozdzial1">Rozdział 1: Światło w Cieniu</a>
+  <a href="#rozdzial2">Rozdział 2: Impuls Biofotoniczny</a>
+  <a href="#rozdzial3">Rozdział 3: Przebudzenie Umysłu</a>
+</nav>
 
-    <!-- Sekcje przepisów -->
-    <section id="przekaski" aria-labelledby="przekaski-title">
-      <div class="section-head">
-        <h2 id="przekaski-title" class="section-title">Przekąski</h2>
-        <div class="count muted" aria-live="polite"></div>
-      </div>
-      <div id="grid-przekaski" class="grid" aria-live="polite"></div>
-    </section>
+<div class="chapter" id="rozdzial1">
+  <h1>Rozdział 1: Światło w Cieniu</h1>
+  <p>Miasto spowite mgłą o poranku zdawało się być zatrzymane w czasie. Wśród szarych bloków, w wąskich uliczkach, światło przedzierało się przez szczeliny, tworząc złote smugi na mokrym bruku. To tutaj, w laboratorium na najwyższym piętrze opuszczonego wieżowca, młoda naukowiec Lena przygotowywała swoje pierwsze eksperymenty z biofotonami – promieniami światła emitowanymi przez żywe komórki.</p>
 
-    <section id="dania" aria-labelledby="dania-title">
-      <div class="section-head">
-        <h2 id="dania-title" class="section-title">Dania główne</h2>
-        <div class="count muted" aria-live="polite"></div>
-      </div>
-      <div id="grid-dania" class="grid" aria-live="polite"></div>
-    </section>
+  <h2>1.1 Laboratorium w mieście</h2>
+  <p>Lena przesuwała palcem po cyfrowym ekranie, obserwując migotanie mikrostruktur w próbówce. Każdy impuls światła, który udało jej się uchwycić, był jak echo niewidzialnej energii, pulsującej w ciele każdego organizmu. Była pierwszą osobą, która próbowała stworzyć interaktywny model biofotoniczny w czasie rzeczywistym.</p>
 
-    <section id="desery" aria-labelledby="desery-title">
-      <div class="section-head">
-        <h2 id="desery-title" class="section-title">Desery</h2>
-        <div class="count muted" aria-live="polite"></div>
-      </div>
-      <div id="grid-desery" class="grid" aria-live="polite"></div>
-    </section>
+  <h2>1.2 Spotkanie z mentor</h2>
+  <p>Dr. Kovac, starszy naukowiec o przenikliwym spojrzeniu, wszedł cicho do laboratorium.</p>
+  <div class="dialog">
+    „Leno, pamiętaj, że światło to nie tylko energia – to język życia. Jeśli dobrze je odczytasz, możesz zrozumieć każdy proces biologiczny.”
+  </div>
+  <p>Lena skinęła głową. Każde słowo mentora wryło się w jej pamięć jak laserowy impuls w szklanej strukturze pamięci biologicznej.</p>
+</div>
 
-    <!-- Kalkulator kalorii i kreator potrawy -->
-    <section id="kalorie" aria-labelledby="kalorie-title">
-      <h2 id="kalorie-title" class="section-title">Kalkulator kalorii & generator przepisu</h2>
-      <p class="muted">Wybierz produkt, podaj ilość i dodaj do potrawy. Kliknij „Utwórz przepis”, aby dodać nową kartę do sekcji.</p>
-      <div class="cal-form">
-        <label>Produkt
-          <select id="cal-product"></select>
-        </label>
-        <label>Ilość (g)
-          <input id="cal-grams" type="number" min="1" step="1" placeholder="100" value="100">
-        </label>
-        <button id="cal-add" class="btn">Dodaj do potrawy</button>
-      </div>
-      <div class="cal-wrap">
-        <table class="cal-table">
-          <thead>
-            <tr><th>Składnik</th><th>Ilość (g)</th><th>Kcal</th><th></th></tr>
-          </thead>
-          <tbody id="cal-body"></tbody>
-          <tfoot>
-            <tr><td colspan="2"><strong>Suma</strong></td><td id="cal-total">0</td><td></td></tr>
-          </tfoot>
-        </table>
-        <div class="cal-actions">
-          <input id="dish-name" type="text" placeholder="Nazwa Twojej potrawy">
-          <select id="dish-category" title="Kategoria przepisu">
-            <option value="dania" selected>Danie główne</option>
-            <option value="przekaski">Przekąska</option>
-            <option value="desery">Deser</option>
-          </select>
-          <button id="dish-make-recipe" class="btn">Utwórz przepis</button>
-          <button id="dish-clear" class="btn secondary">Wyczyść</button>
-        </div>
-        <div id="saved-dishes" class="saved"></div>
-      </div>
-    </section>
+<div class="chapter" id="rozdzial2">
+  <h1>Rozdział 2: Impuls Biofotoniczny</h1>
+  <p>Eksperyment Leny wymagał precyzji absolutnej. Mikroczujniki na jej rękach rejestrowały każdy impuls, każde drgnięcie światła. Kiedy po raz pierwszy udało jej się zsynchronizować biofotony z własnym rytmem mózgu, poczuła falę energii przeszywającą całe ciało.</p>
 
-  </main>
+  <h2>2.1 Pierwsze wyniki</h2>
+  <p>Na ekranie pojawiły się niesamowite wzory. Pulsujące linie światła tworzyły geometryczne struktury, które zmieniały się w zależności od emocji Leny. Eksperyment udowodnił, że myśli i emocje mają fizyczny ślad w świetle emitowanym przez komórki.</p>
 
-  <footer>
-    <div class="container">© <span id="year"></span> Culinary Studio • <a href="#">Polityka prywatności</a></div>
-  </footer>
+  <h2>2.2 Zaskakujący efekt</h2>
+  <div class="dialog">
+    „To niesamowite… – szepnęła Lena – światło może nie tylko pokazać emocje, ale nawet je wzmacniać.”
+  </div>
+  <p>W tym momencie laboratorium wypełnił delikatny, pulsujący blask. Biofotony reagowały na jej koncentrację i świadomość. Było to jak rozmowa z własnym ciałem, lecz prowadzona językiem czystego światła.</p>
+</div>
 
-  <!-- Lightbox Modal -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Podgląd zdjęcia przepisu">
-    <img id="modalImg" alt="Podgląd zdjęcia przepisu" />
+<div class="chapter" id="rozdzial3">
+  <h1>Rozdział 3: Przebudzenie Umysłu</h1>
+  <p>Lena zaczęła eksperymentować z biofotoniczną medytacją – techniką synchronizacji umysłu z własnym światłem komórkowym. Każde ćwiczenie pogłębiało jej percepcję i pozwalało odkrywać subtelne wzorce w świecie, który dotychczas wydawał się chaotyczny.</p>
+
+  <h2>3.1 Pierwsze przebudzenie</h2>
+  <p>Podczas jednej sesji Lena poczuła jakby miliony drobnych iskier tańczyło w jej mózgu i rdzeniu kręgowym. Zrozumiała, że biofotony nie tylko rejestrują stan organizmu, ale mogą też wnikać w otoczenie, wpływając na ludzi w pobliżu.</p>
+
+  <h2>3.2 Wyzwania i odkrycia</h2>
+  <p>Eksperymenty były jednak niebezpieczne. Zbyt intensywne światło powodowało migreny i chwilowe zawroty głowy. Lena musiała opracować precyzyjne protokoły, by nie przekroczyć granicy bezpieczeństwa.</p>
+
+  <h2>3.3 Nowe horyzonty</h2>
+  <p>Przebudzenie umysłu Leny było początkiem rewolucji naukowej. Światło w jej laboratorium nie było już tylko narzędziem – stawało się językiem, który mógł przekraczać granice ciała, umysłu i czasu.</p>
+</div>
+<div class="chapter" id="rozdzial4">
+  <h1>Rozdział 4: Sieć Światła</h1>
+  <p>Lena zaczęła łączyć swoje eksperymenty z biofotoniczną siecią – systemem, który pozwalał na przesyłanie impulsów świetlnych między laboratoriami i badaczami na całym świecie. Każda komórka wysyłała i odbierała informacje, tworząc niewidzialną tkankę wiedzy.</p>
+
+  <h2>4.1 Pierwsze połączenia</h2>
+  <p>W laboratorium pojawiły się nowe czujniki, które mogły wykrywać impulsy światła z odległości kilku kilometrów. Lena wysłała pierwszy sygnał do kolegi w innym mieście.</p>
+  <div class="dialog">
+    „Odebrałem twój impuls, Lena! – zawołał Dr. Kovac – To działa jak rozmowa przez samą materię!”
   </div>
 
-  <script src="./script.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(()=>{});
-      });
-    }
-  </script>
+  <h2>4.2 Sieć w praktyce</h2>
+  <p>Biofotoniczna sieć pozwalała na natychmiastową wymianę danych o stanie emocji, zdrowia i koncentracji badaczy. Wkrótce Lena zauważyła, że ludzie połączni siecią zaczynają synchronizować swoje rytmy biologiczne, co prowadziło do niezwykłej harmonii pracy zespołowej.</p>
+</div>
+
+<div class="chapter" id="rozdzial5">
+  <h1>Rozdział 5: Tajemnica Pulsu</h1>
+  <p>Pewnego dnia Lena odkryła nietypowy wzór w biofotonicznym sygnale – puls, który nie pasował do żadnej znanej jej formy biologicznej. Był regularny, lecz skomplikowany, jakby ktoś lub coś próbowało nawiązać kontakt.</p>
+
+  <h2>5.1 Analiza tajemniczego impulsu</h2>
+  <p>Lena spędziła godziny analizując dane. Puls wydawał się reagować na jej myśli i emocje, ale także pojawiał się w miejscach, w których nikt nie prowadził eksperymentów. Zaczęła podejrzewać, że biofotony mogą być nośnikiem informacji pozaziemskiej lub pozaludzkiej.</p>
+
+  <h2>5.2 Pierwsza komunikacja</h2>
+  <div class="dialog">
+    „Czy to możliwe…? – szepnęła Lena – ktoś próbuje ze mną rozmawiać przez światło.”
+  </div>
+  <p>Eksperymenty zaczęły przybierać formę gry detektywistycznej, gdzie każdy impuls był wskazówką do kolejnego odkrycia.</p>
+</div>
+
+<div class="chapter" id="rozdzial6">
+  <h1>Rozdział 6: Przestrzeń Świadomości</h1>
+  <p>Lena wkraczała teraz w obszary umysłu, które dotąd były poza zasięgiem nauki. Biofotony stały się narzędziem eksploracji świadomości – zarówno własnej, jak i innych osób w sieci.</p>
+
+  <h2>6.1 Eksperyment mentalny</h2>
+  <p>Poprzez synchronizację impulsów świetlnych Leny z uczestnikami eksperymentu, możliwe stało się dzielenie się myślami i wizjami. Wrażenia były intensywne i czasami przytłaczające, lecz każdy uczestnik czuł głębokie połączenie z innymi.</p>
+
+  <h2>6.2 Granice i odpowiedzialność</h2>
+  <p>Lena wiedziała, że takie doświadczenia mogą być niebezpieczne. Zbyt duża intensywność impulsów prowadziła do chwilowego zaniku poczucia czasu i tożsamości. Musiała opracować rygorystyczne protokoły bezpieczeństwa, by chronić uczestników.</p>
+
+  <h2>6.3 Nowe możliwości</h2>
+  <p>Przestrzeń świadomości stała się laboratorium idei, miejscem, w którym można testować myśli i emocje w formie energetycznej. Lena zaczęła planować kolejne eksperymenty, mające na celu stworzenie pierwszego biofotonicznego przewodnika umysłu – podręcznika do świadomości, dostępnego dla każdego.</p>
+</div>
+  <div class="chapter" id="rozdzial7">
+  <h1>Rozdział 7: Echo Nieznanego</h1>
+  <p>Lena zaczęła zauważać, że tajemniczy puls nie tylko reaguje na jej myśli, ale też zdaje się przewidywać pewne zdarzenia. Czasem impulsy pojawiały się jeszcze zanim wydarzyło się coś istotnego w laboratorium.</p>
+
+  <h2>7.1 Pierwsze znaki</h2>
+  <p>Eksperymenty z pulsami stały się bardziej intensywne. Lena odkryła sekwencje, które powtarzały się w określonych odstępach czasu – jakby biofotony posiadały własną logikę i pamięć.</p>
+
+  <h2>7.2 Próba interpretacji</h2>
+  <div class="dialog">
+    „Jeśli to prawda, to ktoś albo coś… obserwuje naszą pracę – albo próbuje jej przewidzieć.” – mówiła Lena do swojego zespołu.
+  </div>
+  <p>Zespół zaczął traktować każdy sygnał jako zagadkę do rozwiązania. Każdy impuls mógł zawierać wskazówkę dotyczącą przyszłych eksperymentów lub możliwych zagrożeń.</p>
+</div>
+
+<div class="chapter" id="rozdzial8">
+  <h1>Rozdział 8: Sieć Światła i Cienia</h1>
+  <p>Podczas gdy biofotoniczna sieć harmonizowała myśli i emocje badaczy, Lena odkryła też ciemną stronę eksperymentów – pojawiały się impulsy zakłócające i mylące. Były to „cienie” w sieci, których źródło pozostawało nieznane.</p>
+
+  <h2>8.1 Pierwsze zakłócenia</h2>
+  <p>Niektóre impulsy wprowadzały chaos w laboratorium. Komputery odczytywały sprzeczne dane, a uczestnicy odczuwali dezorientację i zmęczenie. Lena zaczęła podejrzewać, że sieć ma własną świadomość lub że ktoś z zewnątrz manipuluje eksperymentem.</p>
+
+  <h2>8.2 Próba kontroli</h2>
+  <div class="dialog">
+    „Musimy zrozumieć, skąd pochodzą te zakłócenia. Jeśli sieć zacznie decydować sama…” – ostrzegał Dr. Kovac.
+  </div>
+  <p>Lena wprowadziła filtry bezpieczeństwa, które blokowały najbardziej niebezpieczne impulsy, ale nie mogła całkowicie odizolować sieci od świata zewnętrznego.</p>
+</div>
+
+<div class="chapter" id="rozdzial9">
+  <h1>Rozdział 9: Przebudzenie Bioświadomości</h1>
+  <p>Z czasem Lena zaczęła dostrzegać, że puls i jego zakłócenia nie są przypadkowe – wyglądały jak próba komunikacji, a nawet nauki. Biofotony nie tylko transmitowały informacje, ale też uczyły uczestników eksperymentu nowych sposobów myślenia.</p>
+
+  <h2>9.1 Nowy poziom percepcji</h2>
+  <p>Lena i jej zespół doświadczali stanów umysłu, w których granice między własnymi myślami a sygnałami sieci zaczynały się zacierać. Nauczyli się odczytywać impulsy jak język emocji i idei.</p>
+
+  <h2>9.2 Pierwsze połączenie z nieznanym</h2>
+  <div class="dialog">
+    „Czuję, że ktoś próbuje mi coś pokazać… – mówiła Lena, zamykając oczy – To nie jest człowiek, a jednak… jego intencje są zrozumiałe.”
+  </div>
+
+  <h2>9.3 Przygotowania do kolejnego kroku</h2>
+  <p>Lena postanowiła rozwijać eksperymenty w kierunku pełnej symbiozy z siecią. Planowała stworzyć interfejs pozwalający nie tylko odbierać impulsy, ale też aktywnie wpływać na bioświadomość, otwierając drzwi do nieznanych dotąd wymiarów poznania.</p>
+</div>
 </body>
 </html>
